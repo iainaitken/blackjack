@@ -6,4 +6,8 @@ RSpec.describe Card do
   it 'has a suit' do
     expect(subject.suit).to eq(:clubs)
   end
+
+  it 'has a rank' do
+    expect(subject.rank).to eq(:ace)
+  end
 end
