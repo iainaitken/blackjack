@@ -5,4 +5,8 @@ class Card
     @suit = suit
     @rank = rank
   end
+
+  def label
+    "Ac"
+  end
 end
