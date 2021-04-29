@@ -1,13 +1,13 @@
 require 'card'
 
 RSpec.describe Card do
-  subject { described_class.new(suit: "clubs", rank: "ace") }
+  subject { described_class }
 
-  it 'has a suit' do
-    expect(subject.suit).to eq(:clubs)
+  it 'has a suit and a rank' do
+    card = subject.new(suit: "clubs", rank: "ace")
+
+    expect(card.suit).to eq(:clubs)
+    expect(card.rank).to eq(:ace)
   end
 
-  it 'has a rank' do
-    expect(subject.rank).to eq(:ace)
-  end
 end
