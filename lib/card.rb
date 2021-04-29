@@ -10,27 +10,19 @@ class Card
   private
 
   def create_label
-    rank_shorthand = shorten_rank
-    suit_shorthand = shorten_suit
     label = "#{rank_shorthand}#{suit_shorthand}"
   end
+  
+  def rank_shorthand
+    face_card? ? @rank.chr.upcase : @rank
+  end
 
-  def shorten_suit
+  def suit_shorthand
     @suit.chr
   end
 
-  def shorten_rank
-    case @rank
-    when 'ace'
-      'A'
-    when 'king'
-      'K'
-    when 'queen'
-      'Q'
-    when 'jack'
-      'J'
-    else
-      @rank
-    end
+  def face_card?
+    face_cards = ['ace', 'king', 'queen', 'jack']
+    face_cards.include?(@rank)
   end
 end
