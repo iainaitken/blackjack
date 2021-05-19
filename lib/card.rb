@@ -18,15 +18,15 @@ class Card
   end
 
   def rank_shorthand
-    face_card? ? @rank.chr.upcase : @rank
+    face_card? ? rank.chr.upcase : rank
   end
 
   def suit_shorthand
-    @suit.chr
+    suit.chr
   end
 
   def face_card?
     face_cards = %w[ace king queen jack]
-    face_cards.include?(@rank)
+    face_cards.include?(rank)
   end
 end
